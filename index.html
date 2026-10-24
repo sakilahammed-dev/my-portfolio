@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; connect-src 'self' https://formsubmit.co; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;">
+  <title>Sakil Ahammed | AI Automation Specialist &amp; Workflow Architect</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/images/avatar.png">
+
+  <!-- Google Fonts: Poppins & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Production Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- Mobile Sticky Header (Visible on Mobile & Tablet) -->
+  <header class="mobile-topbar" id="mobileTopbar">
+    <div class="mobile-brand">
+      <img src="./assets/images/avatar.png" alt="Sakil" class="mobile-brand-avatar">
+      <span class="mobile-brand-name">SAKIL</span>
+    </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+      <i class="fa-solid fa-bars-staggered"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Backdrop Overlay -->
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <!-- Ambient Dynamic Particle Canvas -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <div class="app-layout">
+
+    <!-- ====================================================================
+         LEFT NAVIGATION SIDEBAR DOCK (Modeled exactly after Screenshot 2 - InBio)
+         ==================================================================== -->
+    <aside class="sidebar-dock" id="sidebar-dock">
+      
+      <!-- Close Button for Mobile Drawer -->
+      <button class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Close navigation menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- Profile Avatar -->
+      <div class="sidebar-header">
+        <div class="avatar-wrapper">
+          <img src="./assets/images/avatar.png" alt="Sakil Ahammed Avatar">
+        </div>
+      </div>
+
+      <!-- Vertical Navigation Menu -->
+      <nav class="sidebar-nav">
+        <ul class="nav-list">
+          <li>
+            <a href="#home" class="nav-link active">
+              <i class="fa-solid fa-house"></i>
+              <span>HOME</span>
+            </a>
+          </li>
+          <li>
+            <a href="#about" class="nav-link">
+              <i class="fa-regular fa-user"></i>
+              <span>ABOUT</span>
+            </a>
+          </li>
+          <li>
+            <a href="#features" class="nav-link">
+              <i class="fa-solid fa-briefcase"></i>
+              <span>FEATURES</span>
+            </a>
+          </li>
+          <li>
+            <a href="#portfolio" class="nav-link">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>PORTFOLIO</span>
+            </a>
+          </li>
+          <li>
+            <a href="#resume" class="nav-link">
+              <i class="fa-solid fa-users"></i>
+              <span>RESUME</span>
+            </a>
+          </li>
+          <li>
+            <a href="#clients" class="nav-link">
+              <i class="fa-solid fa-user-check"></i>
+              <span>CLIENTS</span>
+            </a>
+          </li>
+          <li>
+            <a href="#blog" class="nav-link">
+              <i class="fa-regular fa-image"></i>
+              <span>BLOG</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contact" class="nav-link">
+              <i class="fa-regular fa-comment-dots"></i>
+              <span>CONTACT</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Subtle Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Bottom Social Section: FIND WITH ME -->
+      <div class="sidebar-footer">
+        <span class="social-label">FIND WITH ME</span>
+        <div class="social-grid">
+          <a href="https://github.com/sakilahammed-dev" target="_blank" rel="noopener noreferrer" class="social-box" title="GitHub: sakilahammed-dev">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-box" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61593307638016" target="_blank" rel="noopener noreferrer" class="social-box" title="Facebook: Sakil Ahammed">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-box" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-box" title="Twitter / X: Sakil Ahammed">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ====================================================================
+         RIGHT MAIN HERO SECTION (Modeled exactly after Screenshot 1 - Clark)
+         (Note: Top navbar stripped out per instructions; moved to Left Dock)
+         ==================================================================== -->
+    <main class="main-stage">
+      
+      <section class="hero-screen" id="home">
+        
+        <!-- Top-Left Brand Logo (Modeled after Clark's top-left branding) -->
+        <div class="hero-top-brand">
+          <a href="#home" class="brand-logo">SAKIL</a>
+        </div>
+
+        <!-- ================================================================
+             SLIDE 1: Identity & Roles (Sakil Ahammed with Green Sweater & Hat)
+             ================================================================ -->
+        <div class="hero-slide active" id="hero-slide-1">
+          <!-- Hero Left Typography & CTAs -->
+          <div class="hero-content">
+            <span class="eyebrow-text">WELCOME TO MY WORLD</span>
+            <h1 class="hero-heading">I'm <span class="name-accent">Sakil Ahammed</span></h1>
+            <p class="hero-subhead">
+              <span>An</span>
+              <span id="typewriter" class="typewriter-text"></span><span class="typewriter-cursor">|</span>
+            </p>
+
+            <div class="hero-action-buttons">
+              <a href="#contact" class="btn btn-primary-gold">HIRE ME</a>
+              <a href="#portfolio" class="btn btn-secondary-outline">MY WORKS</a>
+            </div>
+          </div>
+
+          <!-- Hero Right Cutout Portrait Stage -->
+          <div class="hero-portrait-stage">
+            <div class="portrait-img-box">
+              <img src="./assets/images/sakil-portrait-1.png" alt="Sakil Ahammed" class="portrait-cutout-img">
+            </div>
+          </div>
+        </div>
+
+        <!-- ================================================================
+             SLIDE 2: Specialty & Location (Sakil Ahammed with White Shirt & Hat)
+             (Modeled directly after Clark's 2nd slide)
+             ================================================================ -->
+        <div class="hero-slide" id="hero-slide-2">
+          <!-- Hero Left Typography & CTAs -->
+          <div class="hero-content">
+            <h1 class="hero-heading">I'm an <span class="name-accent">AI Automation Specialist</span> based in Bangladesh</h1>
+            <p class="hero-subhead">
+              Architecting Autonomous Workflows, Intelligent Systems &amp; Digital Growth
+            </p>
+
+            <div class="hero-action-buttons">
+              <a href="#contact" class="btn btn-primary-gold">HIRE ME</a>
+              <a href="#portfolio" class="btn btn-secondary-outline">MY WORKS</a>
+            </div>
+          </div>
+
+          <!-- Hero Right Cutout Portrait Stage -->
+          <div class="hero-portrait-stage">
+            <div class="portrait-img-box">
+              <img src="./assets/images/sakil-portrait-2.png" alt="Sakil Ahammed" class="portrait-cutout-img">
+            </div>
+          </div>
+        </div>
+
+        <!-- Clark-style Global Slider Navigation Dots -->
+        <div class="hero-slider-dots">
+          <span class="slider-dot active" data-slide="0" title="Slide 1"></span>
+          <span class="slider-dot" data-slide="1" title="Slide 2"></span>
+        </div>
+
+      </section>
+
+      <!-- ================================================================
+           PART 3: ABOUT ME (Modeled exactly after Clark's About Me Section)
+           ================================================================ -->
+      <section class="about-section" id="about">
+        <div class="about-container">
+          <div class="about-wrapper">
+            
+            <!-- Left Portrait Image (2nd picture with white hat & arms crossed) -->
+            <div class="about-img-box">
+              <img src="./assets/images/sakil-about.png" alt="About Sakil Ahammed" class="about-portrait-img">
+            </div>
+
+            <!-- Right Content Details -->
+            <div class="about-content">
+              <!-- Watermark -->
+              <div class="about-watermark" aria-hidden="true">About</div>
+
+              <h2 class="about-heading">About Me</h2>
+              <p class="about-intro">
+                I build intelligent AI automations, modern websites, and scalable digital solutions that simplify work.
+              </p>
+
+              <ul class="about-info-list">
+                <li class="about-info-item">
+                  <span class="info-label">Name:</span>
+                  <span class="info-value">Sakil Ahammed</span>
+                </li>
+                <li class="about-info-item">
+                  <span class="info-label">Date of birth:</span>
+                  <span class="info-value">September 10, 1997</span>
+                </li>
+                <li class="about-info-item">
+                  <span class="info-label">Address:</span>
+                  <span class="info-value">Dhaka, Bangladesh</span>
+                </li>
+                <li class="about-info-item">
+                  <span class="info-label">Email:</span>
+                  <span class="info-value"><a href="mailto:sakilahammed114@gmail.com">sakilahammed114@gmail.com</a></span>
+                </li>
+                <li class="about-info-item">
+                  <span class="info-label">Phone:</span>
+                  <span class="info-value"><a href="tel:+8801763838194">+880 1763838194</a></span>
+                </li>
+                <li class="about-info-item">
+                  <span class="info-label">WhatsApp:</span>
+                  <span class="info-value"><a href="https://wa.me/8801763838194" target="_blank" rel="noopener noreferrer">+880 1763838194</a></span>
+                </li>
+              </ul>
+
+              <!-- Counter Highlight -->
+              <div class="about-counter-box">
+                <span class="about-counter-num">25</span>
+                <span class="about-counter-label">Project complete</span>
+              </div>
+
+              <!-- Action Button -->
+              <div class="about-actions">
+                <a href="#about" class="btn btn-primary-gold" id="downloadCvBtn">
+                  <span>DOWNLOAD CV</span>
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           PART 4: FEATURES / WHAT I DO (Modeled after InBio Features Section)
+           ================================================================ -->
+      <section class="features-section" id="features">
+        <div class="features-container">
+          
+          <!-- Section Title (Centered) -->
+          <div class="features-title-wrap">
+            <span class="features-subtitle">FEATURES</span>
+            <h2 class="features-main-heading">What I Do</h2>
+          </div>
+
+          <!-- Features 4-Card Neumorphic Grid -->
+          <div class="features-grid">
+            
+            <!-- Card 1: AI Automation & Workflows -->
+            <div class="feature-card">
+              <div class="feature-inner">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-microchip"></i>
+                </div>
+                <h3 class="feature-title">AI Automation &amp; Workflows</h3>
+                <p class="feature-desc">
+                  Automating repetitive business operations, intelligent multi-agent systems, and custom API workflows to eliminate manual bottlenecks.
+                </p>
+                <div class="feature-arrow">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Website Development -->
+            <div class="feature-card">
+              <div class="feature-inner">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <h3 class="feature-title">Website Development</h3>
+                <p class="feature-desc">
+                  Crafting modern, ultra-fast, responsive web platforms engineered with clean frontend architectures for high engagement and conversions.
+                </p>
+                <div class="feature-arrow">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: App Development -->
+            <div class="feature-card">
+              <div class="feature-inner">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-mobile-screen-button"></i>
+                </div>
+                <h3 class="feature-title">App Development</h3>
+                <p class="feature-desc">
+                  Building robust full-stack web and mobile applications with scalable backend structures, interactive user dashboards, and smooth UX.
+                </p>
+                <div class="feature-arrow">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: Social Marketing Problem Solving -->
+            <div class="feature-card">
+              <div class="feature-inner">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-bullhorn"></i>
+                </div>
+                <h3 class="feature-title">Social Marketing Solutions</h3>
+                <p class="feature-desc">
+                  Troubleshooting marketing roadblocks, creating automated lead funnels, and optimizing digital traffic campaigns for tangible growth.
+                </p>
+                <div class="feature-arrow">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================================================================
+           PART 5: PORTFOLIO / MY PROJECTS (Modeled directly after InBio Portfolio)
+           ================================================================ -->
+      <section class="portfolio-section" id="portfolio">
+        <div class="portfolio-container">
+
+          <!-- Section Title (Centered) -->
+          <div class="portfolio-title-wrap">
+            <span class="portfolio-subtitle">VISIT MY PORTFOLIO AND KEEP YOUR FEEDBACK</span>
+            <h2 class="portfolio-main-heading">My Portfolio</h2>
+          </div>
+
+          <!-- Project Cards Grid (3 Columns) -->
+          <div class="portfolio-grid">
+
+            <!-- Project 1: AI Automation & Workflows -->
+            <article class="portfolio-card" data-project-id="1">
+              <div class="portfolio-thumb">
+                <img src="./assets/images/portfolio/portfolio-01.jpg" alt="Autonomous AI Multi-Agent Workflow Engine" loading="lazy">
+              </div>
+              <div class="portfolio-content">
+                <div class="portfolio-meta">
+                  <span class="portfolio-cat">AI AUTOMATION</span>
+                  <div class="portfolio-likes" data-likes="750">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="likes-count">750</span>
+                  </div>
+                </div>
+                <h3 class="portfolio-title">
+                  <span>Autonomous Multi-Agent Workflow Engine</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </h3>
+              </div>
+            </article>
+
+            <!-- Project 2: Mobile Application Development -->
+            <article class="portfolio-card" data-project-id="2">
+              <div class="portfolio-thumb">
+                <img src="./assets/images/portfolio/portfolio-02.jpg" alt="On-Demand Food & Grocery Mobile Application" loading="lazy">
+              </div>
+              <div class="portfolio-content">
+                <div class="portfolio-meta">
+                  <span class="portfolio-cat">APP DEVELOPMENT</span>
+                  <div class="portfolio-likes" data-likes="820">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="likes-count">820</span>
+                  </div>
+                </div>
+                <h3 class="portfolio-title">
+                  <span>On-Demand Food &amp; Grocery Mobile App</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </h3>
+              </div>
+            </article>
+
+            <!-- Project 3: Modern Web Platform -->
+            <article class="portfolio-card" data-project-id="3">
+              <div class="portfolio-thumb">
+                <img src="./assets/images/portfolio/portfolio-03.jpg" alt="Modern Cloud Travel Booking & Tour Platform" loading="lazy">
+              </div>
+              <div class="portfolio-content">
+                <div class="portfolio-meta">
+                  <span class="portfolio-cat">WEB DEVELOPMENT</span>
+                  <div class="portfolio-likes" data-likes="690">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="likes-count">690</span>
+                  </div>
+                </div>
+                <h3 class="portfolio-title">
+                  <span>Modern Travel Booking &amp; Tour Web Platform</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </h3>
+              </div>
+            </article>
+
+            <!-- Project 4: Marketing Automation & Funnels -->
+            <article class="portfolio-card" data-project-id="4">
+              <div class="portfolio-thumb">
+                <img src="./assets/images/portfolio/portfolio-04.jpg" alt="Automated Lead Qualification & Social Funnel Pipeline" loading="lazy">
+              </div>
+              <div class="portfolio-content">
+                <div class="portfolio-meta">
+                  <span class="portfolio-cat">SOCIAL MARKETING</span>
+                  <div class="portfolio-likes" data-likes="910">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="likes-count">910</span>
+                  </div>
+                </div>
+                <h3 class="portfolio-title">
+                  <span>Automated Lead Funnel &amp; CRM Sync Pipeline</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </h3>
+              </div>
+            </article>
+
+            <!-- Project 5: AI Voice & Intelligent Concierge -->
+            <article class="portfolio-card" data-project-id="5">
+              <div class="portfolio-thumb">
+                <img src="./assets/images/portfolio/portfolio-05.jpg" alt="Intelligent Voice AI & 24/7 Support Concierge" loading="lazy">
+              </div>
+              <div class="portfolio-content">
+                <div class="portfolio-meta">
+                  <span class="portfolio-cat">AI AUTOMATION</span>
+                  <div class="portfolio-likes" data-likes="780">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="likes-count">780</span>
+                  </div>
+                </div>
+                <h3 class="portfolio-title">
+                  <span>Intelligent Voice AI &amp; Support Concierge</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </h3>
+              </div>
+            </article>
+
+            <!-- Project 6: Full-Stack Web Development -->
+            <article class="portfolio-card" data-project-id="6">
+              <div class="portfolio-thumb">
+                <img src="./assets/images/portfolio/portfolio-06.jpg" alt="High-Speed Headless E-Commerce & Inventory Hub" loading="lazy">
+              </div>
+              <div class="portfolio-content">
+                <div class="portfolio-meta">
+                  <span class="portfolio-cat">WEB DEVELOPMENT</span>
+                  <div class="portfolio-likes" data-likes="640">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="likes-count">640</span>
+                  </div>
+                </div>
+                <h3 class="portfolio-title">
+                  <span>Headless E-Commerce &amp; Dynamic Inventory Hub</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </h3>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================================================================
+           PART 6: RESUME (Modeled after InBio Interactive Tabbed Resume)
+           ================================================================ -->
+      <section class="resume-section" id="resume">
+        <div class="resume-container">
+
+          <!-- Section Title (Centered) -->
+          <div class="resume-title-wrap">
+            <span class="resume-subtitle">CREDENTIALS &amp; CAREER MILESTONES</span>
+            <h2 class="resume-main-heading">My Resume</h2>
+          </div>
+
+          <!-- 4-Item Interactive Nav Tabs -->
+          <div class="resume-tabs-nav" role="tablist">
+            <button class="resume-tab-btn active" data-tab="education" role="tab" aria-selected="true">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span>Education</span>
+            </button>
+            <button class="resume-tab-btn" data-tab="skills" role="tab" aria-selected="false">
+              <i class="fa-solid fa-code"></i>
+              <span>Professional Skills</span>
+            </button>
+            <button class="resume-tab-btn" data-tab="experience" role="tab" aria-selected="false">
+              <i class="fa-solid fa-briefcase"></i>
+              <span>Experience</span>
+            </button>
+            <button class="resume-tab-btn" data-tab="certifications" role="tab" aria-selected="false">
+              <i class="fa-solid fa-certificate"></i>
+              <span>Certifications</span>
+            </button>
+          </div>
+
+          <!-- Tab Content Panes -->
+          <div class="resume-tabs-content">
+
+            <!-- PANE 1: EDUCATION -->
+            <div class="resume-tab-pane active" id="pane-education" role="tabpanel">
+              <div class="resume-timeline-grid">
+                
+                <!-- Card 1: Master's Degree -->
+                <div class="resume-timeline-card">
+                  <div class="card-head">
+                    <div class="title-group">
+                      <h3 class="card-title">Master of Arts (M.A.) in Philosophy</h3>
+                      <span class="card-inst">Ananda Mohan Govt. College, Mymensingh</span>
+                      <span class="card-sub">Affiliated with National University, Bangladesh</span>
+                    </div>
+                    <div class="badge-group">
+                      <span class="time-badge">2021 - 2022</span>
+                    </div>
+                  </div>
+                  <hr class="card-divider">
+                  <p class="card-desc">
+                    Specialized study in formal logic, epistemology, systemic philosophy, and ethical frameworks. Applied philosophical reasoning to modern cognitive architectures, symbolic logic, and algorithmic systems.
+                  </p>
+                </div>
+
+                <!-- Card 2: Honours Degree -->
+                <div class="resume-timeline-card">
+                  <div class="card-head">
+                    <div class="title-group">
+                      <h3 class="card-title">Bachelor of Arts (Honours) in Philosophy</h3>
+                      <span class="card-inst">Netrokona Govt. College, Netrokona</span>
+                      <span class="card-sub">Affiliated with National University, Bangladesh</span>
+                    </div>
+                    <div class="badge-group">
+                      <span class="time-badge">2017 - 2021</span>
+                    </div>
+                  </div>
+                  <hr class="card-divider">
+                  <p class="card-desc">
+                    Rigorous foundational study in symbolic logic, critical thinking, philosophy of mind, and ethical problem-solving principles. This philosophical foundation drives first-principles thinking in software architecture and AI workflows.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- PANE 2: PROFESSIONAL SKILLS -->
+            <div class="resume-tab-pane" id="pane-skills" role="tabpanel">
+              <div class="skills-columns-grid">
+                
+                <!-- Column 1: Core Competencies -->
+                <div class="skills-col">
+                  <h4 class="skills-col-title">Core Competencies</h4>
+
+                  <!-- Skill 1 -->
+                  <div class="skill-item">
+                    <div class="skill-meta">
+                      <span class="skill-name">AI Automation &amp; Workflows (n8n, Python, AI APIs)</span>
+                      <span class="skill-percent">95%</span>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" data-width="95%"></div>
+                    </div>
+                  </div>
+
+                  <!-- Skill 2 -->
+                  <div class="skill-item">
+                    <div class="skill-meta">
+                      <span class="skill-name">Web Development (Next.js, React, Tailwind CSS)</span>
+                      <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" data-width="90%"></div>
+                    </div>
+                  </div>
+
+                  <!-- Skill 3 -->
+                  <div class="skill-item">
+                    <div class="skill-meta">
+                      <span class="skill-name">App Development (Flutter, Mobile Architecture)</span>
+                      <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" data-width="85%"></div>
+                    </div>
+                  </div>
+
+                  <!-- Skill 4 -->
+                  <div class="skill-item">
+                    <div class="skill-meta">
+                      <span class="skill-name">Social Marketing Solutions (Meta Ads, Funnels, Growth)</span>
+                      <span class="skill-percent">88%</span>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" data-width="88%"></div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Column 2: Supporting Architecture & Logic -->
+                <div class="skills-col">
+                  <h4 class="skills-col-title">Cognitive &amp; System Architecture</h4>
+
+                  <!-- Skill 5 -->
+                  <div class="skill-item">
+                    <div class="skill-meta">
+                      <span class="skill-name">Symbolic Logic &amp; First-Principles Problem Solving</span>
+                      <span class="skill-percent">95%</span>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" data-width="95%"></div>
+                    </div>
+                  </div>
+
+                  <!-- Skill 6 -->
+                  <div class="skill-item">
+                    <div class="skill-meta">
+                      <span class="skill-name">Python &amp; REST API Integration</span>
+                      <span class="skill-percent">92%</span>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" data-width="92%"></div>
+                    </div>
+                  </div>
+
+                  <!-- Skill 7 -->
+                  <div class="skill-item">
+                    <div class="skill-meta">
+                      <span class="skill-name">Database &amp; Cloud (PostgreSQL, Firebase, Supabase)</span>
+                      <span class="skill-percent">86%</span>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" data-width="86%"></div>
+                    </div>
+                  </div>
+
+                  <!-- Skill 8 -->
+                  <div class="skill-item">
+                    <div class="skill-meta">
+                      <span class="skill-name">UI/UX &amp; Responsive System Design</span>
+                      <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="skill-track">
+                      <div class="skill-fill" data-width="90%"></div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <!-- PANE 3: EXPERIENCE -->
+            <div class="resume-tab-pane" id="pane-experience" role="tabpanel">
+              <div class="resume-timeline-grid">
+                
+                <!-- Exp 1: Unnoto Khabar (Featured at the Very Top) -->
+                <div class="resume-timeline-card">
+                  <div class="card-head">
+                    <div class="title-group">
+                      <h3 class="card-title">Lead Web Developer &amp; Technical Architect</h3>
+                      <span class="card-inst">Unnoto Khabar (উন্নত খাবার)</span>
+                      <span class="card-sub">Commercial Business Website &amp; Digital Platform</span>
+                    </div>
+                    <div class="badge-group">
+                      <span class="time-badge">2024 - Present</span>
+                    </div>
+                  </div>
+                  <hr class="card-divider">
+                  <p class="card-desc">
+                    Architected and developed a full-fledged modern commercial business website for Unnoto Khabar, featuring high-speed responsive UI, dynamic menu &amp; product showcases, frictionless customer inquiry channels, and automated business workflows.
+                  </p>
+                </div>
+
+                <!-- Exp 2: SS Iqra Pure Food -->
+                <div class="resume-timeline-card">
+                  <div class="card-head">
+                    <div class="title-group">
+                      <h3 class="card-title">Founder &amp; System Architect</h3>
+                      <span class="card-inst">SS Iqra Pure Food</span>
+                      <span class="card-sub">Autonomous E-Commerce &amp; Logistics Ecosystem</span>
+                    </div>
+                    <div class="badge-group">
+                      <span class="time-badge">2023 - Present</span>
+                    </div>
+                  </div>
+                  <hr class="card-divider">
+                  <p class="card-desc">
+                    Engineered an end-to-end autonomous business system including an online order platform, real-time Telegram alert bots, automated Google Sheets ledger sync, and courier fulfillment pipelines, optimizing operations without manual delays.
+                  </p>
+                </div>
+
+                <!-- Exp 3: SS IqraTech -->
+                <div class="resume-timeline-card">
+                  <div class="card-head">
+                    <div class="title-group">
+                      <h3 class="card-title">AI &amp; Technology Consultant</h3>
+                      <span class="card-inst">SS IqraTech</span>
+                      <span class="card-sub">Intelligent Agent Systems &amp; Media Engineering</span>
+                    </div>
+                    <div class="badge-group">
+                      <span class="time-badge">2022 - Present</span>
+                    </div>
+                  </div>
+                  <hr class="card-divider">
+                  <p class="card-desc">
+                    Architecting custom multi-agent workflow systems, automation bots, and technology media platforms. Guiding digital transformations and deploying autonomous solutions for streamlined productivity.
+                  </p>
+                </div>
+
+                <!-- Exp 4: Freelance Web & Digital Solutions -->
+                <div class="resume-timeline-card">
+                  <div class="card-head">
+                    <div class="title-group">
+                      <h3 class="card-title">Freelance Web &amp; Digital Solutions Developer</h3>
+                      <span class="card-inst">Global &amp; Local Clients</span>
+                      <span class="card-sub">Full-Stack Platforms &amp; Growth Funnels</span>
+                    </div>
+                    <div class="badge-group">
+                      <span class="time-badge">2020 - Present</span>
+                    </div>
+                  </div>
+                  <hr class="card-divider">
+                  <p class="card-desc">
+                    Designing and deploying high-performance responsive web applications, modern mobile app frontends, and automated lead generation funnels that drive substantial measurable growth for businesses.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- PANE 4: CERTIFICATIONS -->
+            <div class="resume-tab-pane" id="pane-certifications" role="tabpanel">
+              <div class="resume-timeline-grid">
+                
+                <!-- Cert 1 -->
+                <div class="resume-timeline-card">
+                  <div class="card-head">
+                    <div class="title-group">
+                      <h3 class="card-title">AI Automation &amp; Operating System Certification</h3>
+                      <span class="card-inst">As-Sunnah Skill Development Institute (ASSDI)</span>
+                      <span class="card-sub">Autonomous AI Systems &amp; Process Automation</span>
+                    </div>
+                    <div class="badge-group">
+                      <span class="time-badge cert-badge">Certified</span>
+                    </div>
+                  </div>
+                  <hr class="card-divider">
+                  <p class="card-desc">
+                    Comprehensive technical specialization in autonomous AI multi-agent architectures, Linux/OS terminal management, intelligent workflow orchestrations, and API-driven automation.
+                  </p>
+                </div>
+
+                <!-- Cert 2 -->
+                <div class="resume-timeline-card">
+                  <div class="card-head">
+                    <div class="title-group">
+                      <h3 class="card-title">Full-Stack Web Development Certification</h3>
+                      <span class="card-inst">As-Sunnah Skill Development Institute (ASSDI)</span>
+                      <span class="card-sub">Modern Web Architecture &amp; Scalable Systems</span>
+                    </div>
+                    <div class="badge-group">
+                      <span class="time-badge cert-badge">Certified</span>
+                    </div>
+                  </div>
+                  <hr class="card-divider">
+                  <p class="card-desc">
+                    In-depth software engineering certification covering modern frontend component architecture, backend API integration, secure user authentication, and scalable database management.
+                  </p>
+                </div>
+
+                <!-- Cert 3 -->
+                <div class="resume-timeline-card">
+                  <div class="card-head">
+                    <div class="title-group">
+                      <h3 class="card-title">Digital &amp; Social Marketing Solutions Certification</h3>
+                      <span class="card-inst">As-Sunnah Skill Development Institute (ASSDI)</span>
+                      <span class="card-sub">Growth Funnels &amp; Performance Marketing</span>
+                    </div>
+                    <div class="badge-group">
+                      <span class="time-badge cert-badge">Certified</span>
+                    </div>
+                  </div>
+                  <hr class="card-divider">
+                  <p class="card-desc">
+                    Professional certification in social media advertising, Meta Ads optimization, automated customer acquisition funnels, lead qualification, and digital analytics.
+                  </p>
+                </div>
+
+                <!-- Cert 4: Excel Computer Training Center, Netrokona -->
+                <div class="resume-timeline-card">
+                  <div class="card-head">
+                    <div class="title-group">
+                      <h3 class="card-title">Professional Computer Applications &amp; Fundamentals Diploma</h3>
+                      <span class="card-inst">Excel Computer Training Center, Netrokona</span>
+                      <span class="card-sub">Long-Term Comprehensive Computing &amp; Systems Foundation</span>
+                    </div>
+                    <div class="badge-group">
+                      <span class="time-badge cert-badge">Certified</span>
+                    </div>
+                  </div>
+                  <hr class="card-divider">
+                  <p class="card-desc">
+                    Comprehensive technical certification covering operating system navigation, advanced spreadsheet databases, computer office applications, and hardware troubleshooting—establishing the rock-solid ground-level computing foundation.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================================================================
+           PART 7: CLIENTS / TESTIMONIALS (Modeled after InBio Hybrid Section)
+           ================================================================ -->
+      <section class="clients-section" id="clients">
+        <div class="clients-container">
+
+          <!-- Section Title (Centered) -->
+          <div class="clients-title-wrap">
+            <span class="clients-subtitle">TESTIMONIALS &amp; CLIENT TRUST</span>
+            <h2 class="clients-main-heading">What Clients Say</h2>
+          </div>
+
+          <!-- Top: 3 Glowing 5-Star Testimonial Cards -->
+          <div class="testimonials-grid">
+
+            <!-- Testimonial 1: Unnoto Khabar -->
+            <div class="testimonial-card">
+              <div class="testi-top">
+                <div class="testi-author">
+                  <div class="author-avatar">
+                    <span>UK</span>
+                  </div>
+                  <div class="author-info">
+                    <h3 class="author-name">Mahmud Hasan</h3>
+                    <span class="author-role">Operations Director, Unnoto Khabar</span>
+                  </div>
+                </div>
+                <div class="testi-rating" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+              
+              <div class="testi-focus-tag">Commercial Food Web Platform</div>
+              
+              <div class="testi-quote-wrap">
+                <i class="fa-solid fa-quote-left quote-icon" aria-hidden="true"></i>
+                <p class="testi-text">
+                  "Sakil architected and developed a full-fledged commercial web platform for Unnoto Khabar that exceeded our expectations. The site's blazing-fast speed, intuitive product showcase, and seamless customer ordering workflows have significantly improved our business efficiency. His technical honesty and commitment are truly rare."
+                </p>
+              </div>
+            </div>
+
+            <!-- Testimonial 2: AI Automation & Workflows -->
+            <div class="testimonial-card">
+              <div class="testi-top">
+                <div class="testi-author">
+                  <div class="author-avatar">
+                    <span>FA</span>
+                  </div>
+                  <div class="author-info">
+                    <h3 class="author-name">Farhan Ahmed</h3>
+                    <span class="author-role">Digital Operations Manager, Growth Agency</span>
+                  </div>
+                </div>
+                <div class="testi-rating" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+
+              <div class="testi-focus-tag">AI Multi-Agent Workflow Engine</div>
+
+              <div class="testi-quote-wrap">
+                <i class="fa-solid fa-quote-left quote-icon" aria-hidden="true"></i>
+                <p class="testi-text">
+                  "Working with Sakil on our autonomous workflow pipeline transformed how our business runs. He eliminated over 80% of our repetitive daily operations using custom AI agents, webhook automations, and CRM sync. Sakil thinks from first principles and delivers rock-solid, production-grade systems."
+                </p>
+              </div>
+            </div>
+
+            <!-- Testimonial 3: Full-Stack Web & Mobile App -->
+            <div class="testimonial-card">
+              <div class="testi-top">
+                <div class="testi-author">
+                  <div class="author-avatar">
+                    <span>TR</span>
+                  </div>
+                  <div class="author-info">
+                    <h3 class="author-name">Tanvir Rahman</h3>
+                    <span class="author-role">Founder, TechVentures BD</span>
+                  </div>
+                </div>
+                <div class="testi-rating" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+
+              <div class="testi-focus-tag">Responsive Web &amp; Mobile Architecture</div>
+
+              <div class="testi-quote-wrap">
+                <i class="fa-solid fa-quote-left quote-icon" aria-hidden="true"></i>
+                <p class="testi-text">
+                  "Sakil possesses a deep grasp of modern Next.js web architectures and responsive mobile UX. His communication was crystal clear throughout the project, and he delivered on time with impeccable clean code. An outstanding technical strategist and problem solver!"
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom: Client Brands & Associated Ecosystems -->
+          <div class="brands-strip-wrap">
+            <span class="brands-strip-title">ASSOCIATED BRANDS &amp; PLATFORMS</span>
+            <div class="brands-grid">
+
+              <!-- Brand 1: Unnoto Khabar -->
+              <div class="brand-box">
+                <div class="brand-icon">
+                  <i class="fa-solid fa-utensils"></i>
+                </div>
+                <h4 class="brand-name">Unnoto Khabar</h4>
+                <span class="brand-desc">Commercial Web Platform</span>
+              </div>
+
+              <!-- Brand 2: SS Iqra Pure Food -->
+              <div class="brand-box">
+                <div class="brand-icon">
+                  <i class="fa-solid fa-jar"></i>
+                </div>
+                <h4 class="brand-name">SS Iqra Pure Food</h4>
+                <span class="brand-desc">E-Commerce &amp; Logistics</span>
+              </div>
+
+              <!-- Brand 3: SS IqraTech -->
+              <div class="brand-box">
+                <div class="brand-icon">
+                  <i class="fa-solid fa-microchip"></i>
+                </div>
+                <h4 class="brand-name">SS IqraTech</h4>
+                <span class="brand-desc">AI Systems &amp; Media</span>
+              </div>
+
+              <!-- Brand 4: Global Clients & Startups -->
+              <div class="brand-box">
+                <div class="brand-icon">
+                  <i class="fa-solid fa-globe"></i>
+                </div>
+                <h4 class="brand-name">Global Startups</h4>
+                <span class="brand-desc">Web &amp; Automation Funnels</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================================================================
+           PART 8: BLOG / INSIGHTS (Modeled after InBio Neumorphic Blog Grid)
+           ================================================================ -->
+      <section class="blog-section" id="blog">
+        <div class="blog-container">
+
+          <!-- Section Title (Centered) -->
+          <div class="blog-title-wrap">
+            <span class="blog-subtitle">VISIT MY BLOG AND KEEP YOUR FEEDBACK</span>
+            <h2 class="blog-main-heading">My Blog &amp; Insights</h2>
+          </div>
+
+          <!-- Blog Grid: 3 Distinct Columns -->
+          <div class="blog-grid">
+
+            <!-- Blog Card 1: AI Automation -->
+            <article class="blog-card">
+              <div class="blog-thumb">
+                <a href="#blog">
+                  <img src="./assets/images/blog/blog-post-01.jpg" alt="Autonomous AI Multi-Agent Systems">
+                </a>
+              </div>
+              <div class="blog-body">
+                <div class="blog-meta">
+                  <span class="blog-category">AI AUTOMATION</span>
+                  <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 5 min read</span>
+                </div>
+                <h3 class="blog-card-title">
+                  <a href="#blog">
+                    How Autonomous AI Multi-Agent Systems are Revolutionizing Business Operations
+                    <i class="fa-solid fa-arrow-up-right-from-square blog-title-icon"></i>
+                  </a>
+                </h3>
+              </div>
+            </article>
+
+            <!-- Blog Card 2: Web Development -->
+            <article class="blog-card">
+              <div class="blog-thumb">
+                <a href="#blog">
+                  <img src="./assets/images/blog/blog-post-02.jpg" alt="Next.js & Clean Architecture">
+                </a>
+              </div>
+              <div class="blog-body">
+                <div class="blog-meta">
+                  <span class="blog-category">WEB DEVELOPMENT</span>
+                  <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 4 min read</span>
+                </div>
+                <h3 class="blog-card-title">
+                  <a href="#blog">
+                    Next.js &amp; Clean Architecture: Building High-Speed Commercial Platforms
+                    <i class="fa-solid fa-arrow-up-right-from-square blog-title-icon"></i>
+                  </a>
+                </h3>
+              </div>
+            </article>
+
+            <!-- Blog Card 3: Growth Strategy -->
+            <article class="blog-card">
+              <div class="blog-thumb">
+                <a href="#blog">
+                  <img src="./assets/images/blog/blog-post-03.jpg" alt="First-Principles in Digital Marketing">
+                </a>
+              </div>
+              <div class="blog-body">
+                <div class="blog-meta">
+                  <span class="blog-category">GROWTH STRATEGY</span>
+                  <span class="blog-read-time"><i class="fa-regular fa-clock"></i> 6 min read</span>
+                </div>
+                <h3 class="blog-card-title">
+                  <a href="#blog">
+                    First-Principles Thinking in Automated Lead Funnels &amp; Digital Conversions
+                    <i class="fa-solid fa-arrow-up-right-from-square blog-title-icon"></i>
+                  </a>
+                </h3>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================================================================
+           PART 9: CONTACT ME SECTION (InBio Split-Card Architecture)
+           ================================================================ -->
+      <section class="contact-section" id="contact">
+        <div class="contact-container">
+
+          <!-- Section Title (Centered) -->
+          <div class="contact-title-wrap">
+            <span class="contact-subtitle">CONTACT</span>
+            <h2 class="contact-main-heading">Contact With Me</h2>
+          </div>
+
+          <!-- Split-Card Grid (Left: Bio & Direct Meta, Right: Interactive Form) -->
+          <div class="contact-grid">
+
+            <!-- Left Column: Contact Profile Card (Exact InBio Architecture) -->
+            <div class="contact-card contact-about-card">
+              <div class="contact-thumb">
+                <img src="./assets/images/contact/men-business-handshake.png" alt="Sakil Ahammed - Partnership &amp; Collaboration" class="contact-handshake-img">
+              </div>
+              
+              <div class="contact-profile-body">
+                <h3 class="contact-person-name">Sakil Ahammed</h3>
+                <span class="contact-designation">Chief Technical Strategist &amp; AI Automator</span>
+
+                <p class="contact-bio-desc">
+                  I am available for freelance work. Connect with me via and call in to my account.
+                </p>
+
+                <div class="contact-meta-lines">
+                  <span class="meta-line">
+                    <span class="meta-label">Phone:</span>
+                    <a href="tel:+8801763838194" class="meta-val">+880 1763838194</a>
+                  </span>
+                  <span class="meta-line">
+                    <span class="meta-label">Email:</span>
+                    <a href="mailto:sakilahammed114@gmail.com" class="meta-val">sakilahammed114@gmail.com</a>
+                  </span>
+                </div>
+
+                <!-- Social Links: FIND WITH ME -->
+                <div class="contact-social-wrap">
+                  <span class="social-header">FIND WITH ME</span>
+                  <div class="contact-social-icons">
+                    <a href="https://github.com/sakilahammed-dev" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub: sakilahammed-dev">
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">
+                      <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61593307638016" target="_blank" rel="noopener noreferrer" class="social-btn" title="Facebook: Sakil Ahammed">
+                      <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="Instagram">
+                      <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="Twitter / X: Sakil Ahammed">
+                      <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="https://wa.me/8801763838194" target="_blank" rel="noopener noreferrer" class="social-btn" title="WhatsApp Direct Chat: +880 1763838194">
+                      <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Right Column: Interactive Neumorphic Form (Exact InBio Layout & Live Gmail Delivery) -->
+            <div class="contact-card contact-form-card">
+              <form class="contact-form" id="contactForm" action="https://formsubmit.co/sakilahammed114@gmail.com" method="POST" autocomplete="off" novalidate>
+                <!-- FormSubmit Configuration Hidden Fields -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" value="New Portfolio Inquiry for Sakil Ahammed">
+
+                <div class="form-row-dual">
+                  <div class="form-group">
+                    <label for="clientName" class="form-label">YOUR NAME</label>
+                    <input 
+                      type="text" 
+                      id="clientName" 
+                      name="client_name" 
+                      class="form-control" 
+                      autocomplete="off" 
+                      placeholder="e.g. John Doe" 
+                      required
+                    >
+                    <span class="field-error-msg" id="nameError"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="clientPhone" class="form-label">PHONE NUMBER</label>
+                    <input 
+                      type="tel" 
+                      id="clientPhone" 
+                      name="client_phone" 
+                      class="form-control" 
+                      autocomplete="off" 
+                      inputmode="tel" 
+                      placeholder="+880 1XXXXXXXXX"
+                      required
+                    >
+                    <span class="field-error-msg" id="phoneError"></span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="clientEmail" class="form-label">EMAIL</label>
+                  <input 
+                    type="email" 
+                    id="clientEmail" 
+                    name="client_email" 
+                    class="form-control" 
+                    autocomplete="off" 
+                    spellcheck="false"
+                    placeholder="e.g. client@gmail.com" 
+                    required
+                  >
+                  <span class="field-error-msg" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="clientSubject" class="form-label">SUBJECT</label>
+                  <input 
+                    type="text" 
+                    id="clientSubject" 
+                    name="client_subject" 
+                    class="form-control" 
+                    autocomplete="off" 
+                    placeholder="e.g. AI Workflow Automation Project"
+                  >
+                  <span class="field-error-msg" id="subjectError"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="clientMessage" class="form-label">YOUR MESSAGE</label>
+                  <textarea 
+                    id="clientMessage" 
+                    name="client_message" 
+                    rows="8" 
+                    class="form-control" 
+                    autocomplete="off" 
+                    placeholder="Describe your project, timeline, or requirements..." 
+                    required
+                  ></textarea>
+                  <span class="field-error-msg" id="messageError"></span>
+                </div>
+
+                <button type="submit" class="btn-submit-contact" id="contactSubmitBtn">
+                  <span>SEND MESSAGE</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <div class="form-feedback" id="formFeedback" style="display: none;"></div>
+
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================================================================
+           FOOTER SECTION (InBio Minimalist Signature — Clean Branding)
+           ================================================================ -->
+      <footer class="footer-section">
+        <div class="footer-container">
+          <div class="footer-avatar-wrap">
+            <img src="./assets/images/avatar.png" alt="Sakil Ahammed" class="footer-avatar">
+          </div>
+          <h3 class="footer-brand-name">SAKIL AHAMMED</h3>
+          <p class="footer-tagline">Chief Technical Strategist &amp; Full-Stack AI Engineer</p>
+        </div>
+      </footer>
+
+      <!-- ================================================================
+           PROJECT DETAILS INTERACTIVE MODAL (Vanilla JS, Neumorphic Dark UI)
+           ================================================================ -->
+      <div class="project-modal-backdrop" id="projectModalBackdrop" aria-hidden="true">
+        <div class="project-modal-dialog" role="dialog" aria-modal="true">
+          <button class="project-modal-close" id="projectModalCloseBtn" aria-label="Close modal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          
+          <div class="project-modal-body">
+            <div class="modal-media-col">
+              <img id="modalImg" src="./assets/images/portfolio/portfolio-01.jpg" alt="Project Preview" class="modal-project-img">
+            </div>
+            
+            <div class="modal-info-col">
+              <div class="modal-category-badge" id="modalCategory">AI AUTOMATION</div>
+              <h2 class="modal-project-title" id="modalTitle">Autonomous Multi-Agent Workflow Engine</h2>
+              
+              <div class="modal-highlight-box" id="modalHighlight">
+                <i class="fa-solid fa-bolt-lightning"></i>
+                <span id="modalHighlightText">85% Manual Task Reduction</span>
+              </div>
+
+              <p class="modal-project-desc" id="modalDesc">
+                An enterprise-grade autonomous operations system powered by custom AI agents, automated webhook pipelines, and real-time CRM synchronization to eliminate manual operational bottlenecks.
+              </p>
+
+              <div class="modal-tech-stack">
+                <span class="tech-stack-label">Technologies &amp; Architecture:</span>
+                <div class="tech-tags-list" id="modalTechTags">
+                  <!-- Injected via JavaScript -->
+                </div>
+              </div>
+
+              <div class="modal-action-bar">
+                <button class="btn btn-primary-gold modal-view-btn" id="modalActionBtn">
+                  <span>VIEW LIVE DEMO</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+                <button class="modal-like-btn" id="modalLikeBtn">
+                  <i class="fa-regular fa-heart"></i>
+                  <span id="modalLikesCount">750</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Production Controller Script -->
+  <script src="./js/main.js"></script>
+
+</body>
+</html>
