@@ -2462,16 +2462,19 @@ textarea.form-control {
   .about-wrapper {
     flex-direction: column;
     text-align: center;
-    gap: 40px;
+    gap: 0;
   }
 
-  .about-img-box {
-    max-width: 320px;
-    margin: 0 auto;
-  }
-
+  /* Hide the duplicate portrait image on mobile view for clean, uncluttered UX */
+  .about-img-box,
   .about-portrait-img {
-    max-height: 48vh;
+    display: none !important;
+  }
+
+  .about-content {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
   }
 
   .about-watermark {

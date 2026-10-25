@@ -17,8 +17,36 @@
   <!-- FontAwesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- Production Stylesheet -->
-  <link rel="stylesheet" href="./css/style.css">
+  <!-- Production Stylesheet (Cache-Busted v1.1) -->
+  <link rel="stylesheet" href="./css/style.css?v=1.1">
+
+  <!-- Instant Cache-Bypass Mobile Optimization -->
+  <style>
+    @media (max-width: 991px) {
+      .about-img-box,
+      .about-portrait-img,
+      .about-wrapper > .about-img-box {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0px !important;
+        width: 0px !important;
+        max-height: 0px !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+      }
+      .about-wrapper {
+        gap: 0 !important;
+      }
+      .about-content {
+        width: 100% !important;
+        max-width: 650px !important;
+        margin: 0 auto !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
