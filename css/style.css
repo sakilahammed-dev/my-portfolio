@@ -540,10 +540,16 @@ body {
 
 .about-portrait-img {
   width: 100%;
-  max-width: 440px;
+  max-width: 450px;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.95));
+  filter: drop-shadow(0 25px 45px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 35px rgba(212, 175, 55, 0.1));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+}
+
+.about-portrait-img:hover {
+  transform: translateY(-4px) scale(1.01);
+  filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.98)) drop-shadow(0 0 45px rgba(212, 175, 55, 0.22));
 }
 
 /* Right Content */
